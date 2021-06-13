@@ -7,7 +7,8 @@ class CampersController < ApplicationController
   end
 
   def show
-    camper = Camper.find(params[:id]) # camper = Camper.find_by(id: params[:id]) #both work
+    # camper = Camper.find(params[:id])
+    camper = Camper.find_by(id: params[:id]) #both work
     if camper
       render json: camper, status: :ok
     else
